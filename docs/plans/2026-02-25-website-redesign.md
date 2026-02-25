@@ -1,3 +1,25 @@
+# Website Redesign Implementation Plan
+
+> **For Claude:** REQUIRED SUB-SKILL: Use superpowers-extended-cc:executing-plans to implement this plan task-by-task.
+
+**Goal:** Redesign Yuxiang Ma's personal academic website with a clean academic style, two-column hero, research filter toggle (Selected/By Date), and a new Projects section with class/hobby tabs.
+
+**Architecture:** Single `index.html` + `style.css` + inline vanilla JS. Remove W3.CSS dependency. No build step. GitHub Pages compatible.
+
+**Tech Stack:** HTML5, CSS3 (custom, ~200 lines), vanilla JS (~40 lines)
+
+---
+
+### Task 1: Build HTML skeleton
+
+**Files:**
+- Modify: `index.html` (full rewrite)
+
+**Step 1: Replace the entire index.html with the new skeleton**
+
+The new structure (all sections present, content TBD):
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -217,16 +239,16 @@
         <div class="project-card-body">
           <h3>Music Factory: Harp Robot &amp; Human-Machine Interaction</h3>
           <p>A 32-channel automatic harp robot with a layered modular framework integrating hardware and software for real-time control and machine learning algorithms for human-machine collaborative music performance.</p>
-          <p class="project-meta">Tsinghua University &nbsp;&middot;&nbsp; Prof. Gangtie Zheng</p>
+          <p class="project-meta">Tsinghua University · Prof. Gangtie Zheng</p>
         </div>
       </div>
 
-      <!-- HOBBY PROJECTS -->
+      <!-- HOBBY PROJECTS — placeholder cards -->
       <div class="project-card" data-category="hobby">
-        <div class="project-card-placeholder"></div>
+        <div class="project-card-img project-card-placeholder"></div>
         <div class="project-card-body">
           <h3>Hobby Project (coming soon)</h3>
-          <p>This section will be updated with hobby projects.</p>
+          <p>This section will be filled with hobby projects.</p>
         </div>
       </div>
 
@@ -237,7 +259,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <p>Updated Feb 2026 &nbsp;&middot;&nbsp; Yuxiang Ma</p>
+    <p>Updated Feb 2026 &nbsp;·&nbsp; Yuxiang Ma</p>
   </div>
 </footer>
 
@@ -289,3 +311,309 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
+```
+
+**Step 2: Verify file saved correctly**
+
+Open `index.html` in a browser and confirm: nav bar visible, two-column about section renders, research and projects sections exist.
+
+**Step 3: Commit**
+
+```bash
+git add index.html
+git commit -m "feat: rebuild index.html with new academic layout skeleton"
+```
+
+---
+
+### Task 2: Write style.css
+
+**Files:**
+- Create: `style.css`
+
+**Step 1: Write the full stylesheet**
+
+```css
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+a { color: #1772d0; text-decoration: none; }
+a:hover { color: #f09228; }
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 48px 0; }
+section.alt-bg { background: #f9f9f9; }
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* ===== NAV ===== */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: #333;
+}
+
+.nav-links a {
+  margin-left: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #555;
+}
+
+.nav-links a:hover { color: #1772d0; }
+
+/* ===== ABOUT ===== */
+#about { padding-top: 90px; } /* offset for fixed nav */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.about-photo img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-text h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.about-title {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.about-text p { margin-bottom: 10px; }
+
+.about-links { margin-top: 4px; }
+
+/* ===== TOGGLE BAR ===== */
+.toggle-bar {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 20px;
+}
+
+.toggle-btn {
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.toggle-btn.active {
+  color: #1772d0;
+  font-weight: 700;
+  border-bottom: 2px solid #1772d0;
+}
+
+.toggle-btn:hover { color: #1772d0; }
+
+/* ===== RESEARCH PAPERS ===== */
+.paper-row {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.paper-row:last-child { border-bottom: none; }
+
+.paper-img {
+  flex-shrink: 0;
+  width: 160px;
+}
+
+.paper-img img {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+}
+
+.paper-info { flex: 1; }
+
+.paper-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.paper-authors {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 2px;
+}
+
+.paper-venue {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.paper-links {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.paper-desc {
+  font-size: 13px;
+  color: #555;
+}
+
+/* ===== PROJECTS ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.project-card-img img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card-placeholder {
+  width: 100%;
+  height: 140px;
+  background: #f0f0f0;
+}
+
+.project-card-body { padding: 14px; }
+
+.project-card-body h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.project-card-body p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.project-meta { color: #888 !important; font-size: 12px !important; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #f9f9f9;
+  border-top: 1px solid #e8e8e8;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 680px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-photo { display: flex; justify-content: center; }
+  .project-grid { grid-template-columns: 1fr; }
+  .paper-row { flex-direction: column; }
+  .paper-img { width: 100%; }
+  .paper-img img { width: 100%; height: auto; }
+}
+
+@media (max-width: 900px) and (min-width: 681px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+```
+
+**Step 2: Commit**
+
+```bash
+git add style.css
+git commit -m "feat: add style.css for new academic layout"
+```
+
+---
+
+### Task 3: Final cleanup and verification
+
+**Files:**
+- None to add; verify and commit
+
+**Step 1: Open index.html locally in browser**
+
+Check:
+- [ ] Nav is sticky and links work
+- [ ] About section: photo and bio side by side
+- [ ] Research toggle: Selected shows 3 papers, By Date shows all 7
+- [ ] Projects toggle: Class shows harp project, Hobby shows placeholder
+- [ ] Mobile view (resize to <680px): stacks correctly
+
+**Step 2: Remove old stylesheet reference (already done in Task 1), verify no broken links**
+
+Open browser dev tools → Console: no 404 errors.
+
+**Step 3: Commit**
+
+```bash
+git add .
+git commit -m "feat: complete website redesign with research filter and projects section"
+```
