@@ -100,6 +100,30 @@ h2 {
 
 .about-links { margin-top: 4px; }
 
+/* ===== NEWS ===== */
+.news-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.news-list li {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.news-date {
+  flex-shrink: 0;
+  width: 80px;
+  font-weight: 700;
+  color: #1772d0;
+  font-size: 14px;
+}
+
 /* ===== TOGGLE BAR ===== */
 .toggle-bar {
   margin-bottom: 24px;
