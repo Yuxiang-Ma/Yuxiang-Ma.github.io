@@ -3,8 +3,8 @@
 
 body {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.7;
   color: #333;
   background: #fff;
 }
@@ -23,7 +23,7 @@ section { padding: 48px 0; }
 section.alt-bg { background: #f9f9f9; }
 
 h2 {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   color: #333;
   margin-bottom: 16px;
@@ -85,14 +85,14 @@ h2 {
 }
 
 .about-text h1 {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .about-title {
   color: #666;
-  font-size: 14px;
+  font-size: 17px;
   margin-bottom: 12px;
 }
 
@@ -108,7 +108,7 @@ h2 {
 }
 
 .toggle-btn {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 400;
   color: #888;
   padding-bottom: 3px;
@@ -159,29 +159,29 @@ h2 {
 
 .paper-title {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 17px;
   margin-bottom: 4px;
 }
 
 .paper-authors {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   margin-bottom: 2px;
 }
 
 .paper-venue {
-  font-size: 13px;
+  font-size: 15px;
   color: #777;
   margin-bottom: 6px;
 }
 
 .paper-links {
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 6px;
 }
 
 .paper-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
 }
 
@@ -215,13 +215,13 @@ h2 {
 .project-card-body { padding: 14px; }
 
 .project-card-body h3 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .project-card-body p {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   margin-bottom: 4px;
 }
