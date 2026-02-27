@@ -65,9 +65,53 @@ h2 {
 }
 
 .nav-links a:hover { color: #1772d0; }
+.nav-links a.nav-active { color: #1772d0; }
 
 /* ===== ABOUT ===== */
 #about { padding-top: 90px; } /* offset for fixed nav */
+
+/* offset for fixed nav on non-home pages */
+.page-start { padding-top: 90px; }
+
+/* ===== TEASER ===== */
+#teaser { padding: 32px 0; }
+
+.teaser-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.teaser-strip::-webkit-scrollbar { height: 4px; }
+.teaser-strip::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 2px; }
+.teaser-strip::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+.teaser-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  text-align: center;
+  color: inherit;
+}
+
+.teaser-item img {
+  height: 180px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+  display: block;
+}
+
+.teaser-label {
+  font-size: 13px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.teaser-item:hover .teaser-label { color: #1772d0; }
 
 .about-grid {
   display: grid;
@@ -110,7 +154,7 @@ h2 {
 
 .news-list li {
   display: flex;
-  gap: 16px;
+  gap: 0;
   align-items: baseline;
   font-size: 16px;
   line-height: 1.6;
@@ -119,10 +163,20 @@ h2 {
 .news-date {
   flex-shrink: 0;
   width: 80px;
+  margin-right: 16px;
   font-weight: 700;
   color: #1772d0;
   font-size: 14px;
 }
+
+/* ===== NEWS TOGGLE ===== */
+#news-toggle {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #888;
+}
+#news-toggle:hover { color: #1772d0; }
 
 /* ===== TOGGLE BAR ===== */
 .toggle-bar {

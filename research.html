@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research — Yuxiang Ma</title>
+  <meta name="description" content="Research and projects by Yuxiang Ma, MIT PhD candidate in tactile sensing and robotic manipulation.">
+  <meta name="author" content="Yuxiang Ma">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <span class="nav-name">Yuxiang Ma</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="nav-active">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="https://www.dropbox.com/scl/fi/iowcpgl0x0t1w81h6u04p/CV.pdf?rlkey=66n6yttvjnmhdeq3anavi0uco&dl=0" target="_blank">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<!-- RESEARCH -->
+<section id="research" class="page-start alt-bg">
+  <div class="container">
+    <h2>Research</h2>
+    <div class="toggle-bar">
+      <a href="#" id="btn-all" class="toggle-btn active" onclick="showTopic('all', event)">All</a>
+      <a href="#" id="btn-robotics" class="toggle-btn" onclick="showTopic('robotics', event)">Robotics</a>
+      <a href="#" id="btn-flexelec" class="toggle-btn" onclick="showTopic('flexelec', event)">Flexible Electronics</a>
+    </div>
+
+    <div class="papers">
+
+      <!-- Compositional Multi-Stream -->
+      <div class="paper-row" data-topic="robotics" data-year="2026">
+        <div class="paper-img">
+          <img src="images/research/ram_perturb.gif" alt="CoStream">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation</p>
+          <p class="paper-authors">Haonan Chen*, <strong>Yuxiang Ma</strong>*, Stephen Tian, Xiaoshen Han, Wenlong Huang, Yunzhu Li, Jiajun Wu, Edward Adelson, Yilun Du</p>
+          <p class="paper-venue"><em>Coming soon, under submission to RSS 2026</em></p>
+          <p class="paper-desc">A composable foundation model combining a VLM planner, world model, and high-frequency reactive policy based on tactile and force-torque sensing. The multi-stream structure solves high-level planning and fine-grained manipulation skills at different levels, enabling long-horizon tasks with reactive correction behavior.</p>
+        </div>
+      </div>
+
+      <!-- InvariantCloud -->
+      <div class="paper-row" data-topic="robotics" data-year="2026">
+        <div class="paper-img">
+          <img src="images/research/invariantcloud.gif" alt="InvariantCloud">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">InvariantCloud: Globally Invariant Point Cloud Registration for High-Precision 6DoF Tactile Pose Tracking</p>
+          <p class="paper-authors">Pengfei Ye, <strong>Yuxiang Ma</strong>, Yi Zhou, Molong Duan</p>
+          <p class="paper-venue"><em>ICRA 2026</em></p>
+          <p class="paper-links">
+            [<a href="https://openreview.net/forum?id=lM7do4uSs1">paper</a>]
+          </p>
+          <p class="paper-desc">A framework for 6-DoF tactile object pose estimation using vision-based tactile sensors, leveraging globally invariant surface marker arrangements for one-shot point cloud registration — achieving sub-2° yaw tracking error and addressing cumulative drift in z-axis rotation estimation.</p>
+        </div>
+      </div>
+
+      <!-- Dynamic Regrasping -->
+      <div class="paper-row" data-topic="robotics" data-year="2025">
+        <div class="paper-img">
+          <img src="images/research/dynamic_manipulation.gif" alt="Dynamic Regrasping">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">Dynamic Regrasping with Asynchronous Vision Feedback using a Minimalist Robotic System</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>, Edward Adelson</p>
+          <p class="paper-venue"><em>ICRA RoboLetics 2.0 Workshop 2025</em></p>
+          <p class="paper-links">
+            [<a href="files/regrasping.pdf">paper</a>]
+            [<a href="https://drive.google.com/drive/folders/1wftX8xUIxImfchglkPsZ1jNzyD1lnvzb">videos</a>]
+          </p>
+          <p class="paper-desc">A minimalist dynamic regrasping approach that throws an object into a ballistic trajectory and regrasps using computed-torque control, refined with asynchronous visual feedback — demonstrating successful mid-air regrasping without high-speed vision or complex hardware.</p>
+        </div>
+      </div>
+
+      <!-- T3 -->
+      <div class="paper-row" data-topic="robotics" data-year="2024">
+        <div class="paper-img">
+          <img src="images/research/t3.gif" alt="T3">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">Transferable Tactile Transformers for Representation Learning Across Diverse Sensors and Tasks</p>
+          <p class="paper-authors">Alan Zhao, <strong>Yuxiang Ma</strong>, Edward Adelson</p>
+          <p class="paper-venue"><em>CoRL 2024</em></p>
+          <p class="paper-links">
+            [<a href="https://t3.alanz.info/">project website</a>]
+            [<a href="https://arxiv.org/abs/2406.13640">arxiv</a>]
+            [<a href="https://github.com/alanzjl/t3">code</a>]
+          </p>
+          <p class="paper-desc">A tactile representation learned from multi-sensors and multi-tasks, and a tactile dataset containing over 3M tactile images collected from 13 sensors and 11 tasks.</p>
+        </div>
+      </div>
+
+      <!-- GelLink -->
+      <div class="paper-row" data-topic="robotics" data-year="2024">
+        <div class="paper-img">
+          <img src="images/research/taclink.jpg" alt="TacLink">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">TacLink: A Compact Multi-phalanx Finger with Vision-based Tactile Sensing and Proprioception</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>, Jialiang (Alan) Zhao, Edward Adelson</p>
+          <p class="paper-venue"><em>ICRA 2024</em></p>
+          <p class="paper-links">
+            [<a href="https://arxiv.org/abs/2403.14887">arxiv</a>]
+            [<a href="https://youtu.be/hZwUpAig5C0">video</a>]
+          </p>
+          <p class="paper-desc">GelLink has three phalanges and two DOFs, actuated by only one motor and visualized by only one camera. A compact mechanism with a mirror-based tactile sensing system achieves a versatile multi-phalanx design with embedded tactile sensing and accurate proprioception.</p>
+        </div>
+      </div>
+
+      <!-- Scalable Fin Ray -->
+      <div class="paper-row" data-topic="robotics" data-year="2024">
+        <div class="paper-img">
+          <img src="images/research/simfr.jpg" alt="Scalable Fin Ray">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">Scalable, Simulation-Guided Compliant Tactile Finger Design</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>*, Arpit Agarwal*, Sandra Liu*, Wenzhen Yuan, Edward Adelson</p>
+          <p class="paper-venue"><em>RoboSoft 2024</em></p>
+          <p class="paper-links">
+            [<a href="https://arxiv.org/abs/2403.04638">arxiv</a>]
+            [<a href="https://youtu.be/CnTUTA5cfMw">video</a>]
+          </p>
+          <p class="paper-desc">A simulation framework combining FEM mechanical simulation and physically based rendering (PBR) for end-to-end forward design of GelSight Fin Ray sensors, enabling faster design and prototyping of new sensors.</p>
+        </div>
+      </div>
+
+      <!-- Baby Fin Ray -->
+      <div class="paper-row" data-topic="robotics" data-year="2023">
+        <div class="paper-img">
+          <img src="images/research/bbfr.png" alt="Baby Fin Ray">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">GelSight Baby Fin Ray: A Compact, Compliant, Flexible Finger with High-Resolution Tactile Sensing</p>
+          <p class="paper-authors">Sandra Liu, <strong>Yuxiang Ma</strong>, Edward Adelson</p>
+          <p class="paper-venue"><em>RoboSoft 2023</em></p>
+          <p class="paper-links">
+            [<a href="https://arxiv.org/abs/2303.14883">arxiv</a>]
+            [<a href="https://www.youtube.com/watch?app=desktop&v=_oD_QFtYTPM">video</a>]
+          </p>
+          <p class="paper-desc">Flexible mirrors and high-elongation silicone fluorescent paints incorporated into the GelSight Baby Fin Ray enable grasping through clutter and classification of in-shell nuts.</p>
+        </div>
+      </div>
+
+      <!-- Elastography -->
+      <div class="paper-row" data-topic="flexelec" data-year="2023">
+        <div class="paper-img">
+          <img src="images/research/elastography.png" alt="Elastography">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">Stretchable ultrasonic arrays for the three-dimensional mapping of the modulus of deep tissue</p>
+          <p class="paper-authors">Hongjie Hu, <strong>Yuxiang Ma</strong>, Xiaoxiang Gao, Dawei Song, Mohan Li, Hao Huang, … Sheng Xu</p>
+          <p class="paper-venue"><em>Nature Biomedical Engineering 2023</em></p>
+          <p class="paper-links">
+            [<a href="https://www.nature.com/articles/s41551-023-01038-w">paper</a>]
+          </p>
+          <p class="paper-desc">A stretchable ultrasonic array for serial non-invasive elastographic measurements of tissues up to 4 cm beneath the skin at 0.5 mm spatial resolution.</p>
+        </div>
+      </div>
+
+      <!-- Wearable cardiac -->
+      <div class="paper-row" data-topic="flexelec" data-year="2023">
+        <div class="paper-img">
+          <img src="images/research/heartimager.png" alt="Cardiac Imager">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">A wearable cardiac ultrasound imager</p>
+          <p class="paper-authors">Hongjie Hu, Hao Huang, Mohan Li, Xiaoxiang Gao, Lu Yin, Ruixiang Qi, Ray S. Wu, Xiangjun Chen, <strong>Yuxiang Ma</strong>, … Sheng Xu</p>
+          <p class="paper-venue"><em>Nature 2023</em></p>
+          <p class="paper-links">
+            [<a href="https://www.nature.com/articles/s41586-022-05498-z">paper</a>]
+          </p>
+          <p class="paper-desc">A wearable ultrasonic device for continuous, real-time cardiac function assessment using a deep learning model that automatically extracts left ventricular volume waveforms.</p>
+        </div>
+      </div>
+
+      <!-- Blood pressure -->
+      <div class="paper-row" data-topic="flexelec" data-year="2021">
+        <div class="paper-img">
+          <img src="images/research/bperror.jpg" alt="Blood Pressure">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">The effect of arterial stiffness on the accuracy of cuff-based blood pressure measurement</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>, Ying Chen, Yinji Ma, Xue Feng</p>
+          <p class="paper-venue"><em>Extreme Mechanics Letters 2021</em></p>
+          <p class="paper-links">
+            [<a href="https://www.sciencedirect.com/science/article/pii/S2352431621000742">paper</a>]
+          </p>
+          <p class="paper-desc">A theoretical model studying the impact of arterial wall properties on non-invasive blood pressure measurement, revealing that arteriosclerotic patients' blood pressure may be overestimated.</p>
+        </div>
+      </div>
+
+    </div><!-- .papers -->
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>Updated Feb 2026 &nbsp;&middot;&nbsp; Yuxiang Ma</p>
+  </div>
+</footer>
+
+<script>
+function showTopic(topic, e) {
+  if (e) e.preventDefault();
+  document.querySelectorAll('.paper-row').forEach(function(row) {
+    row.style.display = (topic === 'all' || row.dataset.topic === topic) ? '' : 'none';
+  });
+  document.getElementById('btn-all').classList.toggle('active', topic === 'all');
+  document.getElementById('btn-robotics').classList.toggle('active', topic === 'robotics');
+  document.getElementById('btn-flexelec').classList.toggle('active', topic === 'flexelec');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  showTopic('all', null);
+});
+</script>
+
+</body>
+</html>
