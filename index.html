@@ -95,45 +95,47 @@
   <div class="container">
     <h2>Research</h2>
     <div class="toggle-bar">
-      <a href="#" id="btn-selected" class="toggle-btn active" onclick="showSelected(event)">Selected</a>
-      <a href="#" id="btn-date" class="toggle-btn" onclick="showByDate(event)">By Date</a>
+      <a href="#" id="btn-robotics" class="toggle-btn active" onclick="showTopic('robotics', event)">Robotics</a>
+      <a href="#" id="btn-flexelec" class="toggle-btn" onclick="showTopic('flexelec', event)">Flexible Electronics</a>
     </div>
 
     <div class="papers">
 
       <!-- Compositional Multi-Stream — selected -->
-      <div class="paper-row" data-selected="true" data-year="2026">
+      <div class="paper-row" data-topic="robotics" data-year="2026">
         <div class="paper-img">
-          <div class="paper-img-placeholder"></div>
+          <img src="images/research/ram_perturb.gif" alt="CoStream">
         </div>
         <div class="paper-info">
-          <p class="paper-title">Compositional Multi-Stream Framework for Multi-Modal Manipulation</p>
-          <p class="paper-authors"><strong>Yuxiang Ma</strong>, Yilun Du, Edward Adelson</p>
+          <p class="paper-title">CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation</p>
+          <p class="paper-authors">Haonan Chen*, <strong>Yuxiang Ma</strong>*, Stephen Tian, Xiaoshen Han, Wenlong Huang, Yunzhu Li, Jiajun Wu, Edward Adelson, Yilun Du</p>
           <p class="paper-venue"><em>Comming soon, under submission to RSS 2026</em></p>
           <p class="paper-desc">A composable foundation model combining a VLM planner, world model, and high-frequency reactive policy based on tactile and force-torque sensing. The multi-stream structure solves high-level planning and fine-grained manipulation skills at different levels, enabling long-horizon tasks with reactive correction behavior.</p>
         </div>
       </div>
 
       <!-- Dynamic Regrasping — selected -->
-      <div class="paper-row" data-selected="true" data-year="2025">
+      <div class="paper-row" data-topic="robotics" data-year="2025">
         <div class="paper-img">
-          <div class="paper-img-placeholder"></div>
+          <img src="images/research/dynamic_manipulation.gif" alt="dymanip">
         </div>
         <div class="paper-info">
           <p class="paper-title">Dynamic Regrasping with Asynchronous Vision Feedback using a Minimalist Robotic System</p>
           <p class="paper-authors"><strong>Yuxiang Ma</strong>, Edward Adelson</p>
           <p class="paper-venue"><em>ICRA RoboLetics 2.0 Workshop 2025</em></p>
           <p class="paper-links">
+            [<a href="files/regrasping.pdf">paper</a>]
+            [<a href="https://drive.google.com/drive/folders/1wftX8xUIxImfchglkPsZ1jNzyD1lnvzb">videos</a>]
           </p>
           <p class="paper-desc">A minimalist dynamic regrasping approach that throws an object into a ballistic trajectory and regrasps using computed-torque control, refined with asynchronous visual feedback — demonstrating successful mid-air regrasping without high-speed vision or complex hardware.</p>
         </div>
       </div>
 
-      <!-- T3 — selected -->
-      <div class="paper-row" data-selected="true" data-year="2024">
+      <!-- T3 -->
+      <div class="paper-row" data-topic="robotics" data-year="2024">
         <div class="paper-img">
-          <img src="images/research/t3.gif" alt="T3">
-        </div>
+            <img src="images/research/t3.gif" alt="T3">
+          </div>
         <div class="paper-info">
           <p class="paper-title">Transferable Tactile Transformers for Representation Learning Across Diverse Sensors and Tasks</p>
           <p class="paper-authors">Alan Zhao, <strong>Yuxiang Ma</strong>, Edward Adelson</p>
@@ -147,8 +149,8 @@
         </div>
       </div>
 
-      <!-- GelLink — selected -->
-      <div class="paper-row" data-selected="true" data-year="2024">
+      <!-- GelLink -->
+      <div class="paper-row" data-topic="robotics" data-year="2024">
         <div class="paper-img">
           <img src="images/research/taclink.jpg" alt="GelLink">
         </div>
@@ -164,8 +166,8 @@
         </div>
       </div>
 
-      <!-- Scalable Fin Ray — selected -->
-      <div class="paper-row" data-selected="true" data-year="2024">
+      <!-- Scalable Fin Ray -->
+      <div class="paper-row" data-topic="robotics" data-year="2024">
         <div class="paper-img">
           <img src="images/research/simfr.jpg" alt="Scalable Fin Ray">
         </div>
@@ -182,7 +184,7 @@
       </div>
 
       <!-- Baby Fin Ray -->
-      <div class="paper-row" data-selected="false" data-year="2023">
+      <div class="paper-row" data-topic="robotics" data-year="2023">
         <div class="paper-img">
           <img src="images/research/bbfr.png" alt="Baby Fin Ray">
         </div>
@@ -199,7 +201,7 @@
       </div>
 
       <!-- Elastography -->
-      <div class="paper-row" data-selected="false" data-year="2023">
+      <div class="paper-row" data-topic="flexelec" data-year="2023">
         <div class="paper-img">
           <img src="images/research/elastography.png" alt="Elastography">
         </div>
@@ -215,7 +217,7 @@
       </div>
 
       <!-- Wearable cardiac -->
-      <div class="paper-row" data-selected="false" data-year="2023">
+      <div class="paper-row" data-topic="flexelec" data-year="2023">
         <div class="paper-img">
           <img src="images/research/heartimager.png" alt="Cardiac Imager">
         </div>
@@ -231,7 +233,7 @@
       </div>
 
       <!-- Blood pressure -->
-      <div class="paper-row" data-selected="false" data-year="2021">
+      <div class="paper-row" data-topic="flexelec" data-year="2021">
         <div class="paper-img">
           <img src="images/research/bperror.jpg" alt="Blood Pressure">
         </div>
@@ -264,7 +266,7 @@
       <!-- CLASS PROJECTS -->
       <div class="project-card" data-category="class">
         <div class="project-card-img">
-          <img src="images/harp.bmp" alt="Music Factory">
+          <img src="images/projects/harp.bmp" alt="Music Factory">
         </div>
         <div class="project-card-body">
           <h3>Music Factory: Harp Robot &amp; Human-Machine Interaction</h3>
@@ -294,23 +296,14 @@
 </footer>
 
 <script>
-// Research toggle
-function showSelected(e) {
-  e.preventDefault();
+// Research topic toggle
+function showTopic(topic, e) {
+  if (e) e.preventDefault();
   document.querySelectorAll('.paper-row').forEach(function(row) {
-    row.style.display = row.dataset.selected === 'true' ? '' : 'none';
+    row.style.display = row.dataset.topic === topic ? '' : 'none';
   });
-  document.getElementById('btn-selected').classList.add('active');
-  document.getElementById('btn-date').classList.remove('active');
-}
-
-function showByDate(e) {
-  e.preventDefault();
-  document.querySelectorAll('.paper-row').forEach(function(row) {
-    row.style.display = '';
-  });
-  document.getElementById('btn-selected').classList.remove('active');
-  document.getElementById('btn-date').classList.add('active');
+  document.getElementById('btn-robotics').classList.toggle('active', topic === 'robotics');
+  document.getElementById('btn-flexelec').classList.toggle('active', topic === 'flexelec');
 }
 
 // Projects toggle
@@ -332,9 +325,9 @@ function showHobby(e) {
   document.getElementById('btn-hobby').classList.add('active');
 }
 
-// Init: show selected papers and class projects by default
+// Init: show robotics papers and class projects by default
 document.addEventListener('DOMContentLoaded', function() {
-  showSelected({ preventDefault: function(){} });
+  showTopic('robotics', null);
   showClass({ preventDefault: function(){} });
 });
 </script>

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:haonan16.github.io)",
+      "Bash(cd:*)"
+    ]
+  }
+}

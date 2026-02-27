@@ -149,6 +149,15 @@ h2 {
 .toggle-btn:hover { color: #1772d0; }
 
 /* ===== RESEARCH PAPERS ===== */
+.research-topic {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 32px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ddd;
+  color: #333;
+}
+
 .paper-row {
   display: flex;
   gap: 20px;
