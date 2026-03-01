@@ -4,7 +4,9 @@
       "WebFetch(domain:haonan16.github.io)",
       "Bash(cd:*)",
       "WebFetch(domain:sqliu343.github.io)",
-      "WebFetch(domain:openreview.net)"
+      "WebFetch(domain:openreview.net)",
+      "Bash(git lfs:*)",
+      "WebFetch(domain:yuxiang-ma.github.io)"
     ]
   }
 }
