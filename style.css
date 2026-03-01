@@ -55,6 +55,13 @@ h2 {
   font-weight: 700;
   font-size: 20px;
   color: #333;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .nav-links a {
@@ -327,12 +334,21 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 680px) {
+  .nav-inner {
+    padding: 0 16px;
+  }
+  .nav-name {
+    font-size: 15px;
+  }
+  .nav-links a {
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
-    text-align: center;
   }
-  .about-photo { display: flex; justify-content: center; }
-  .about-links { text-align: center; }
   .project-grid { grid-template-columns: 1fr; }
   .paper-row { flex-direction: column; }
   .paper-img { width: 100%; }
