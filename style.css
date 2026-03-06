@@ -342,11 +342,11 @@ h2 {
 
 .paper-img {
   flex-shrink: 0;
-  width: 220px;
+  width: 400px;
 }
 
 .paper-img img {
-  width: 220px;
+  width: 400px;
   height: auto;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -356,7 +356,7 @@ h2 {
 .paper-row:hover .paper-img img { box-shadow: var(--shadow-sm); }
 
 .paper-img-placeholder {
-  width: 220px;
+  width: 400px;
   height: 130px;
   background: var(--bg-alt);
   border-radius: var(--radius);
