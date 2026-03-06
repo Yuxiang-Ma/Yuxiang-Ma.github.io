@@ -7,19 +7,18 @@ const COAUTHORS = {
 
   // ── Robotics / MIT ──────────────────────────────────────────────────
   "Haonan Chen":           { url: "https://haonan16.github.io/" },
-  "Alan Zhao":             { url: "https://alanz.info/" },
   "Jialiang (Alan) Zhao":  { url: "https://alanz.info/" },
-  "Stephen Tian":          { url: "" },
-  "Xiaoshen Han":          { url: "" },
-  "Wenlong Huang":         { url: "" },
-  "Yunzhu Li":             { url: "" },
-  "Jiajun Wu":             { url: "" },
-  "Arpit Agarwal":         { url: "" },
+  "Stephen Tian":          { url: "https://s-tian.github.io/" },
+  "Xiaoshen Han":          { url: "https://xshenhan.github.io/" },
+  "Wenlong Huang":         { url: "https://wenlonghuang.com/" },
+  "Yunzhu Li":             { url: "https://yunzhuli.github.io/" },
+  "Jiajun Wu":             { url: "https://jiajunwu.com/" },
+  "Arpit Agarwal":         { url: "https://arpit15.github.io/" },
   "Sandra Liu":            { url: "https://sqliu343.github.io/" },
-  "Wenzhen Yuan":          { url: "" },
+  "Wenzhen Yuan":          { url: "https://siebelschool.illinois.edu/about/people/faculty/yuanwz" },
   "Pengfei Ye":            { url: "" },
   "Yi Zhou":               { url: "" },
-  "Molong Duan":           { url: "" },
+  "Molong Duan":           { url: "https://www.linkedin.com/in/molongduan/" },
 
   // ── Flexible electronics / UCSD ─────────────────────────────────────
   "Hongjie Hu":            { url: "" },
