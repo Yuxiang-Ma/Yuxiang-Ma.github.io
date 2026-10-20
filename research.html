@@ -29,24 +29,75 @@
 <section id="research" class="page-start alt-bg">
   <div class="container">
     <h2>Research</h2>
-    <div class="toggle-bar">
-      <a href="#" id="btn-all" class="toggle-btn active" onclick="showTopic('all', event)">All</a>
-      <a href="#" id="btn-robotics" class="toggle-btn" onclick="showTopic('robotics', event)">Robotics</a>
-      <a href="#" id="btn-flexelec" class="toggle-btn" onclick="showTopic('flexelec', event)">Flexible Electronics</a>
-    </div>
+    <h3 class="research-topic research-topic-first">Representative Work</h3>
 
     <div class="papers">
 
-      <!-- Compositional Multi-Stream -->
+      <!-- CoStream -->
       <div class="paper-row" data-topic="robotics" data-year="2026">
         <div class="paper-img">
           <img src="images/research/ram_perturb.gif" alt="CoStream">
         </div>
         <div class="paper-info">
-          <p class="paper-title">CoStream: Compositional Multi-Stream Framework for Multi-Modal Manipulation</p>
-          <p class="paper-authors">Haonan Chen*, <strong>Yuxiang Ma</strong>*, Stephen Tian, Xiaoshen Han, Wenlong Huang, Yunzhu Li, Jiajun Wu, Edward Adelson, Yilun Du</p>
-          <p class="paper-venue"><em>Coming soon, under submission to RSS 2026</em></p>
-          <p class="paper-desc">A composable foundation model combining a VLM planner, world model, and high-frequency reactive policy based on tactile and force-torque sensing. The multi-stream structure solves high-level planning and fine-grained manipulation skills at different levels, enabling long-horizon tasks with reactive correction behavior.</p>
+          <p class="paper-title">CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation</p>
+          <p class="paper-authors">Haonan Chen*, <strong>Yuxiang Ma</strong>*, Stephen Tian, Xiaoshen Han, Wenlong Huang, Feiyang Wu, Yunzhu Li, Jiajun Wu, Edward Adelson, Yilun Du</p>
+          <p class="paper-venue"><em>CoRL 2026</em></p>
+          <p class="paper-links">
+            [<a href="https://costream-simple.github.io/">project website</a>]
+            [<a href="https://arxiv.org/abs/2606.26423">arxiv</a>]
+            [<a href="https://github.com/costream-simple/costream">code</a>]
+          </p>
+          <p class="paper-desc">Complex manipulation composed from simple, independent behaviors: a semantic behavior that turns instructions into spatial constraints with an LLM and a VLM, a predictive behavior that extracts trajectories from a video world model, and a reactive behavior that applies high-rate tactile and force corrections. The behaviors share an SE(3) interface and compose into one pose command per control step, solving 8 real-world tasks, from CPU, GPU, and RAM assembly to everyday manipulation, without per-task demonstrations or retraining.</p>
+        </div>
+      </div>
+
+      <!-- ACTS -->
+      <div class="paper-row" data-topic="robotics" data-year="2026">
+        <div class="paper-img">
+          <img src="images/research/acts.gif" alt="ACTS">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>*, Weihan Xu*, Pengfei Ye, Anna Mei, Yuxin Ray Song, Tingle Li, Haonan Chen, Edward Adelson</p>
+          <p class="paper-venue"><em>arXiv preprint 2026</em></p>
+          <p class="paper-links">
+            [<a href="https://acts-anon.github.io/" rel="noreferrer noopener">project website</a>]
+            [<a href="https://arxiv.org/abs/2610.24285">arxiv</a>]
+          </p>
+          <p class="paper-desc">A visuo-tactile world model trained only on human interaction data. Operators manipulate handheld GelSight sensors to collect React, a 4.9-hour bimanual dataset with scene, wrist, and tactile video, 6-DoF sensor motion, and tactile-derived normal force. ACTS jointly predicts future scene, wrist, and tactile frames; without fine-tuning, its predicted tactile imprints still appear and disappear with contact on robot teleoperation data.</p>
+        </div>
+      </div>
+
+      <!-- GlowTact -->
+      <div class="paper-row" data-topic="robotics" data-year="2026">
+        <div class="paper-img">
+          <img src="images/research/glowtact.jpg" alt="GlowTact">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">GlowTact: Simple and Compact Vision-Based Tactile Sensing with High Sensitivity and Spatial Resolution</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>*, Megha Tippur*, Pengfei Ye, Sandra Q. Liu, Haonan Chen, Francis Richard Cottrell, Edward Adelson</p>
+          <p class="paper-venue"><em>arXiv preprint 2026</em></p>
+          <p class="paper-links">
+            [<a href="https://glowtact.github.io/">project website</a>]
+            [<a href="https://arxiv.org/abs/2609.32471">arxiv</a>]
+          </p>
+          <p class="paper-desc">Pressure closes an air gap between a black nitrile membrane and a clear gel, so contact turns dark in the camera image. The sensor needs only single-color light and a monochrome camera, with no photometric stereo, markers, or calibration. It picks up a 0.2 g screw resting under its own weight and resolves 0.25 mm-pitch M1 threads from a single frame, in flat, omnidirectional fingertip, and humanoid fingertip form factors.</p>
+        </div>
+      </div>
+
+      <!-- YOTO -->
+      <div class="paper-row" data-topic="robotics" data-year="2026">
+        <div class="paper-img">
+          <img src="images/research/yoto.gif" alt="You Only Touch Once">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">You Only Touch Once: 6-DoF Object Pose Estimation from Single Tactile Contact</p>
+          <p class="paper-authors">Pengfei Ye*, <strong>Yuxiang Ma</strong>*, Haonan Chen, Guangming Wang, Yixiong Jing, Brian Sheil, Yilun Du, Edward Adelson</p>
+          <p class="paper-venue"><em>arXiv preprint 2026</em></p>
+          <p class="paper-links">
+            [<a href="https://arxiv.org/abs/2606.28899">arxiv</a>]
+          </p>
+          <p class="paper-desc">YOTO recovers the full 6-DoF pose of an object from a single pair of simultaneous GelSight contacts, without contact history. A network pretrained on virtual tactile patches localizes each contact on the object surface, and a closed-form, normal-aware SVD solver returns the pose in one step. It works with CAD models or meshes from consumer mobile scans, and stays anchored to the object under occlusion, where vision-based FoundationPose drifts.</p>
         </div>
       </div>
 
@@ -56,13 +107,31 @@
           <img src="images/research/InvariantCloud.gif" alt="InvariantCloud">
         </div>
         <div class="paper-info">
-          <p class="paper-title">InvariantCloud: Globally Invariant Point Cloud Registration for High-Precision 6DoF Tactile Pose Tracking</p>
-          <p class="paper-authors">Pengfei Ye*, <strong>Yuxiang Ma</strong>*, Yi Zhou, Molong Duan</p>
+          <p class="paper-title">InvariantCloud: A Globally Invariant, Uniquely Indexed Point Cloud Framework for Robust 6-DoF Tactile Pose Tracking</p>
+          <p class="paper-authors">Pengfei Ye*, <strong>Yuxiang Ma</strong>*, Yi Zhou, Wei Chen, Wenzhen Dong, Molong Duan</p>
           <p class="paper-venue"><em>ICRA 2026</em></p>
           <p class="paper-links">
             [<a href="https://openreview.net/forum?id=lM7do4uSs1">paper</a>]
+            [<a href="https://arxiv.org/abs/2605.25216">arxiv</a>]
           </p>
           <p class="paper-desc">A framework for 6-DoF tactile object pose estimation using vision-based tactile sensors, leveraging globally invariant surface marker arrangements for one-shot point cloud registration — achieving sub-2° yaw tracking error and addressing cumulative drift in z-axis rotation estimation.</p>
+        </div>
+      </div>
+
+      <!-- RichMap -->
+      <div class="paper-row" data-topic="robotics" data-year="2026">
+        <div class="paper-img">
+          <img src="images/research/richmap.jpg" alt="RichMap">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">RichMap: A Reachability Map Balancing Precision, Efficiency, and Flexibility for Rich Robot Manipulation Tasks</p>
+          <p class="paper-authors">Yupu Lu, <strong>Yuxiang Ma</strong>, Jia Pan</p>
+          <p class="paper-venue"><em>WAFR 2026</em></p>
+          <p class="paper-links">
+            [<a href="https://arxiv.org/abs/2604.06778">arxiv</a>]
+            [<a href="https://github.com/YupuLu/richmap">code</a>]
+          </p>
+          <p class="paper-desc">A grid-based reachability map that comes close to compact forms such as RM4D while keeping the flexibility of a grid: over 98% prediction accuracy, 1&ndash;2% false positives, and about 15&nbsp;&mu;s per query in large batches. Workspace similarity between robots, measured with MMD, guides diffusion policy transfer and improves cross-embodiment block pushing by up to 26%.</p>
         </div>
       </div>
 
@@ -83,31 +152,13 @@
         </div>
       </div>
 
-      <!-- T3 -->
-      <div class="paper-row" data-topic="robotics" data-year="2024">
-        <div class="paper-img">
-          <img src="images/research/t3.gif" alt="T3">
-        </div>
-        <div class="paper-info">
-          <p class="paper-title">Transferable Tactile Transformers for Representation Learning Across Diverse Sensors and Tasks</p>
-          <p class="paper-authors">Jialiang (Alan) Zhao, <strong>Yuxiang Ma</strong>, Edward Adelson</p>
-          <p class="paper-venue"><em>CoRL 2024</em></p>
-          <p class="paper-links">
-            [<a href="https://t3.alanz.info/">project website</a>]
-            [<a href="https://arxiv.org/abs/2406.13640">arxiv</a>]
-            [<a href="https://github.com/alanzjl/t3">code</a>]
-          </p>
-          <p class="paper-desc">A tactile representation learned from multi-sensors and multi-tasks, and a tactile dataset containing over 3M tactile images collected from 13 sensors and 11 tasks.</p>
-        </div>
-      </div>
-
       <!-- GelLink -->
       <div class="paper-row" data-topic="robotics" data-year="2024">
         <div class="paper-img">
-          <img src="images/research/taclink.jpg" alt="TacLink">
+          <img src="images/research/taclink.jpg" alt="GelLink">
         </div>
         <div class="paper-info">
-          <p class="paper-title">TacLink: A Compact Multi-phalanx Finger with Vision-based Tactile Sensing and Proprioception</p>
+          <p class="paper-title">GelLink: A Compact Multi-phalanx Finger with Vision-based Tactile Sensing and Proprioception</p>
           <p class="paper-authors"><strong>Yuxiang Ma</strong>, Jialiang (Alan) Zhao, Edward Adelson</p>
           <p class="paper-venue"><em>ICRA 2024</em></p>
           <p class="paper-links">
@@ -135,10 +186,44 @@
         </div>
       </div>
 
+      <!-- T3 -->
+      <div class="paper-row" data-topic="robotics" data-year="2024">
+        <div class="paper-img">
+          <img src="images/research/t3.gif" alt="T3">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">Transferable Tactile Transformers for Representation Learning Across Diverse Sensors and Tasks</p>
+          <p class="paper-authors">Jialiang (Alan) Zhao, <strong>Yuxiang Ma</strong>, Lirui Wang, Edward Adelson</p>
+          <p class="paper-venue"><em>CoRL 2024</em></p>
+          <p class="paper-links">
+            [<a href="https://t3.alanz.info/">project website</a>]
+            [<a href="https://arxiv.org/abs/2406.13640">arxiv</a>]
+            [<a href="https://github.com/alanzjl/t3">code</a>]
+          </p>
+          <p class="paper-desc">A tactile representation learned from multi-sensors and multi-tasks, and a tactile dataset containing over 3M tactile images collected from 13 sensors and 11 tasks.</p>
+        </div>
+      </div>
+
+      <!-- Elastography -->
+      <div class="paper-row" data-topic="flexelec" data-year="2023">
+        <div class="paper-img">
+          <img src="images/research/elastography.png" alt="Elastography">
+        </div>
+        <div class="paper-info">
+          <p class="paper-title">Stretchable ultrasonic arrays for the three-dimensional mapping of the modulus of deep tissue</p>
+          <p class="paper-authors">Hongjie Hu*, <strong>Yuxiang Ma</strong>*, Xiaoxiang Gao*, Dawei Song*, Mohan Li, Hao Huang, … Sheng Xu</p>
+          <p class="paper-venue"><em>Nature Biomedical Engineering 2023</em></p>
+          <p class="paper-links">
+            [<a href="https://www.nature.com/articles/s41551-023-01038-w">paper</a>]
+          </p>
+          <p class="paper-desc">A stretchable ultrasonic array for serial non-invasive elastographic measurements of tissues up to 4 cm beneath the skin at 0.5 mm spatial resolution.</p>
+        </div>
+      </div>
+
       <!-- Baby Fin Ray -->
       <div class="paper-row" data-topic="robotics" data-year="2023">
         <div class="paper-img">
-          <img src="images/research/bbfr.png" alt="Baby Fin Ray">
+          <img src="images/research/bbfr.png" alt="GelSight Baby Fin Ray">
         </div>
         <div class="paper-info">
           <p class="paper-title">GelSight Baby Fin Ray: A Compact, Compliant, Flexible Finger with High-Resolution Tactile Sensing</p>
@@ -152,35 +237,19 @@
         </div>
       </div>
 
-      <!-- Elastography -->
-      <div class="paper-row" data-topic="flexelec" data-year="2023">
+      <!-- Baby Fin Ray learning (workshop) -->
+      <div class="paper-row" data-topic="robotics" data-year="2023">
         <div class="paper-img">
-          <img src="images/research/elastography.png" alt="Elastography">
+          <img src="images/research/bbfr_force.jpg" alt="GelSight Baby Fin Ray force estimation setup">
         </div>
         <div class="paper-info">
-          <p class="paper-title">Stretchable ultrasonic arrays for the three-dimensional mapping of the modulus of deep tissue</p>
-          <p class="paper-authors">Hongjie Hu, <strong>Yuxiang Ma</strong>, Xiaoxiang Gao, Dawei Song, Mohan Li, Hao Huang, … Sheng Xu</p>
-          <p class="paper-venue"><em>Nature Biomedical Engineering 2023</em></p>
+          <p class="paper-title">Object Recognition and Force Estimation with the GelSight Baby Fin Ray</p>
+          <p class="paper-authors">Sandra Liu, <strong>Yuxiang Ma</strong>, Edward Adelson</p>
+          <p class="paper-venue"><em>CoRL 2023 Workshop on Learning for Soft Robots</em></p>
           <p class="paper-links">
-            [<a href="https://www.nature.com/articles/s41551-023-01038-w">paper</a>]
+            [<a href="https://arxiv.org/abs/2509.14510">arxiv</a>]
           </p>
-          <p class="paper-desc">A stretchable ultrasonic array for serial non-invasive elastographic measurements of tissues up to 4 cm beneath the skin at 0.5 mm spatial resolution.</p>
-        </div>
-      </div>
-
-      <!-- Wearable cardiac -->
-      <div class="paper-row" data-topic="flexelec" data-year="2023">
-        <div class="paper-img">
-          <img src="images/research/heartimager.png" alt="Cardiac Imager">
-        </div>
-        <div class="paper-info">
-          <p class="paper-title">A wearable cardiac ultrasound imager</p>
-          <p class="paper-authors">Hongjie Hu, Hao Huang, Mohan Li, Xiaoxiang Gao, Lu Yin, Ruixiang Qi, Ray S. Wu, Xiangjun Chen, <strong>Yuxiang Ma</strong>, … Sheng Xu</p>
-          <p class="paper-venue"><em>Nature 2023</em></p>
-          <p class="paper-links">
-            [<a href="https://www.nature.com/articles/s41586-022-05498-z">paper</a>]
-          </p>
-          <p class="paper-desc">A wearable ultrasonic device for continuous, real-time cardiac function assessment using a deep learning model that automatically extracts left ventricular volume waveforms.</p>
+          <p class="paper-desc">Learning on the Baby Fin Ray's tactile images to tell nut-in-shell textures apart and to estimate contact force and position, with ablations across ResNet50, GoogLeNet, and small CNNs.</p>
         </div>
       </div>
 
@@ -201,21 +270,188 @@
       </div>
 
     </div><!-- .papers -->
+
+    <h3 class="research-topic" id="publications">All Publications</h3>
+    <div class="pub-head">
+      <div class="toggle-bar">
+        <a href="#" id="btn-all" class="toggle-btn active" onclick="showTopic('all', event)">All</a>
+        <a href="#" id="btn-robotics" class="toggle-btn" onclick="showTopic('robotics', event)">Robotics</a>
+        <a href="#" id="btn-flexelec" class="toggle-btn" onclick="showTopic('flexelec', event)">Flexible Electronics</a>
+      </div>
+      <p class="pub-note">* equal contribution</p>
+    </div>
+
+    <div class="pub-group">
+      <p class="pub-year">2026</p>
+      <ul class="pub-list">
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">ACTS: Learning Visuo-Tactile World Models from Human Physical Interaction</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>*, Weihan Xu*, Pengfei Ye, Anna Mei, Yuxin Ray Song, Tingle Li, Haonan Chen, Edward Adelson</p>
+          <p class="pub-meta"><em>arXiv preprint 2026</em>
+            [<a href="https://acts-anon.github.io/" rel="noreferrer noopener">project website</a>]
+            [<a href="https://arxiv.org/abs/2610.24285">arxiv</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">Robot Learning with Visual Predicted Force</p>
+          <p class="paper-authors">Haonan Chen*, Feiyang Wu*, <strong>Yuxiang Ma</strong>, Mustafa Mete, Pengfei Ye, Junxuan Shen, Cheng Zhu, Aurora Ruggeri, Kelvin Cheung, Jiayuan Mao, Edward Adelson, Jiajun Wu, Robert D. Howe, Yilun Du</p>
+          <p class="pub-meta"><em>arXiv preprint 2026</em>
+            [<a href="https://visual-force.github.io/">project website</a>]
+            [<a href="https://arxiv.org/abs/2610.04741">arxiv</a>]
+            [<a href="https://github.com/visual-force/visual-force">code</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">GlowTact: Simple and Compact Vision-Based Tactile Sensing with High Sensitivity and Spatial Resolution</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>*, Megha Tippur*, Pengfei Ye, Sandra Q. Liu, Haonan Chen, Francis Richard Cottrell, Edward Adelson</p>
+          <p class="pub-meta"><em>arXiv preprint 2026</em>
+            [<a href="https://glowtact.github.io/">project website</a>]
+            [<a href="https://arxiv.org/abs/2609.32471">arxiv</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">A Brain-inspired Hierarchical Framework for Zero-Shot Robot Task Reasoning and Execution</p>
+          <p class="paper-authors">Guangming Wang, Pengfei Ye, Qizhen Ying, Yixiong Jing, <strong>Yuxiang Ma</strong>, Haonan Chen, Haibing Wu, Olaf Wysocki, Molong Duan, Brian Sheil</p>
+          <p class="pub-meta"><em>arXiv preprint 2026</em>
+            [<a href="https://arxiv.org/abs/2609.05985">arxiv</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">RoboEdit: Turning Human Manipulation Videos into Scalable Robot Experience</p>
+          <p class="paper-authors">Yaowei Guo, Zeng Tao, Yuxin Jiang, Yunuo Chen, Zhiyang Dou, <strong>Yuxiang Ma</strong>, Yin Yang, Demetri Terzopoulos, Ying Jiang, Chenfanfu Jiang</p>
+          <p class="pub-meta"><em>arXiv preprint 2026</em>
+            [<a href="https://roboedit.github.io/">project website</a>]
+            [<a href="https://arxiv.org/abs/2608.18948">arxiv</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">You Only Touch Once: 6-DoF Object Pose Estimation from Single Tactile Contact</p>
+          <p class="paper-authors">Pengfei Ye*, <strong>Yuxiang Ma</strong>*, Haonan Chen, Guangming Wang, Yixiong Jing, Brian Sheil, Yilun Du, Edward Adelson</p>
+          <p class="pub-meta"><em>arXiv preprint 2026</em>
+            [<a href="https://arxiv.org/abs/2606.28899">arxiv</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">CoStream: Composing Simple Behaviors for Generalizable Complex Manipulation</p>
+          <p class="paper-authors">Haonan Chen*, <strong>Yuxiang Ma</strong>*, Stephen Tian, Xiaoshen Han, Wenlong Huang, Feiyang Wu, Yunzhu Li, Jiajun Wu, Edward Adelson, Yilun Du</p>
+          <p class="pub-meta"><em>CoRL 2026</em>
+            [<a href="https://costream-simple.github.io/">project website</a>]
+            [<a href="https://arxiv.org/abs/2606.26423">arxiv</a>]
+            [<a href="https://github.com/costream-simple/costream">code</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">InvariantCloud: A Globally Invariant, Uniquely Indexed Point Cloud Framework for Robust 6-DoF Tactile Pose Tracking</p>
+          <p class="paper-authors">Pengfei Ye*, <strong>Yuxiang Ma</strong>*, Yi Zhou, Wei Chen, Wenzhen Dong, Molong Duan</p>
+          <p class="pub-meta"><em>ICRA 2026</em>
+            [<a href="https://openreview.net/forum?id=lM7do4uSs1">paper</a>]
+            [<a href="https://arxiv.org/abs/2605.25216">arxiv</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">RichMap: A Reachability Map Balancing Precision, Efficiency, and Flexibility for Rich Robot Manipulation Tasks</p>
+          <p class="paper-authors">Yupu Lu, <strong>Yuxiang Ma</strong>, Jia Pan</p>
+          <p class="pub-meta"><em>WAFR 2026</em>
+            [<a href="https://arxiv.org/abs/2604.06778">arxiv</a>]
+            [<a href="https://github.com/YupuLu/richmap">code</a>]</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <p class="pub-year">2025</p>
+      <ul class="pub-list">
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">Dynamic Regrasping with Asynchronous Vision Feedback using a Minimalist Robotic System</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>, Edward Adelson</p>
+          <p class="pub-meta"><em>ICRA RoboLetics 2.0 Workshop 2025</em>
+            [<a href="files/regrasping.pdf">paper</a>]
+            [<a href="https://drive.google.com/drive/folders/1wftX8xUIxImfchglkPsZ1jNzyD1lnvzb">videos</a>]</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <p class="pub-year">2024</p>
+      <ul class="pub-list">
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">Transferable Tactile Transformers for Representation Learning Across Diverse Sensors and Tasks</p>
+          <p class="paper-authors">Jialiang (Alan) Zhao, <strong>Yuxiang Ma</strong>, Lirui Wang, Edward Adelson</p>
+          <p class="pub-meta"><em>CoRL 2024</em>
+            [<a href="https://t3.alanz.info/">project website</a>]
+            [<a href="https://arxiv.org/abs/2406.13640">arxiv</a>]
+            [<a href="https://github.com/alanzjl/t3">code</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">GelLink: A Compact Multi-phalanx Finger with Vision-based Tactile Sensing and Proprioception</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>, Jialiang (Alan) Zhao, Edward Adelson</p>
+          <p class="pub-meta"><em>ICRA 2024</em>
+            [<a href="https://arxiv.org/abs/2403.14887">arxiv</a>]
+            [<a href="https://youtu.be/hZwUpAig5C0">video</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">Scalable, Simulation-Guided Compliant Tactile Finger Design</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>*, Arpit Agarwal*, Sandra Liu*, Wenzhen Yuan, Edward Adelson</p>
+          <p class="pub-meta"><em>RoboSoft 2024</em>
+            [<a href="https://arxiv.org/abs/2403.04638">arxiv</a>]
+            [<a href="https://youtu.be/CnTUTA5cfMw">video</a>]</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <p class="pub-year">2023</p>
+      <ul class="pub-list">
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">Object Recognition and Force Estimation with the GelSight Baby Fin Ray</p>
+          <p class="paper-authors">Sandra Liu, <strong>Yuxiang Ma</strong>, Edward Adelson</p>
+          <p class="pub-meta"><em>CoRL 2023 Workshop on Learning for Soft Robots</em>
+            [<a href="https://arxiv.org/abs/2509.14510">arxiv</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="robotics">
+          <p class="paper-title">GelSight Baby Fin Ray: A Compact, Compliant, Flexible Finger with High-Resolution Tactile Sensing</p>
+          <p class="paper-authors">Sandra Liu, <strong>Yuxiang Ma</strong>, Edward Adelson</p>
+          <p class="pub-meta"><em>RoboSoft 2023</em>
+            [<a href="https://arxiv.org/abs/2303.14883">arxiv</a>]
+            [<a href="https://www.youtube.com/watch?app=desktop&v=_oD_QFtYTPM">video</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="flexelec">
+          <p class="paper-title">Stretchable ultrasonic arrays for the three-dimensional mapping of the modulus of deep tissue</p>
+          <p class="paper-authors">Hongjie Hu*, <strong>Yuxiang Ma</strong>*, Xiaoxiang Gao*, Dawei Song*, Mohan Li, Hao Huang, … Sheng Xu</p>
+          <p class="pub-meta"><em>Nature Biomedical Engineering 2023</em>
+            [<a href="https://www.nature.com/articles/s41551-023-01038-w">paper</a>]</p>
+        </li>
+        <li class="pub-item" data-topic="flexelec">
+          <p class="paper-title">A wearable cardiac ultrasound imager</p>
+          <p class="paper-authors">Hongjie Hu, Hao Huang, Mohan Li, Xiaoxiang Gao, Lu Yin, Ruixiang Qi, Ray S. Wu, Xiangjun Chen, <strong>Yuxiang Ma</strong>, … Sheng Xu</p>
+          <p class="pub-meta"><em>Nature 2023</em>
+            [<a href="https://www.nature.com/articles/s41586-022-05498-z">paper</a>]</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-group">
+      <p class="pub-year">2021</p>
+      <ul class="pub-list">
+        <li class="pub-item" data-topic="flexelec">
+          <p class="paper-title">The effect of arterial stiffness on the accuracy of cuff-based blood pressure measurement</p>
+          <p class="paper-authors"><strong>Yuxiang Ma</strong>, Ying Chen, Yinji Ma, Xue Feng</p>
+          <p class="pub-meta"><em>Extreme Mechanics Letters 2021</em>
+            [<a href="https://www.sciencedirect.com/science/article/pii/S2352431621000742">paper</a>]</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <p>Updated Feb 2026 &nbsp;&middot;&nbsp; Yuxiang Ma</p>
+    <p>Updated Oct 2026 &nbsp;&middot;&nbsp; Yuxiang Ma</p>
   </div>
 </footer>
 
 <script>
 function showTopic(topic, e) {
   if (e) e.preventDefault();
-  document.querySelectorAll('.paper-row').forEach(function(row) {
-    row.style.display = (topic === 'all' || row.dataset.topic === topic) ? '' : 'none';
+  document.querySelectorAll('.pub-item').forEach(function(item) {
+    item.style.display = (topic === 'all' || item.dataset.topic === topic) ? '' : 'none';
+  });
+  document.querySelectorAll('.pub-group').forEach(function(group) {
+    var visible = group.querySelectorAll('.pub-item:not([style*="none"])').length;
+    group.style.display = visible ? '' : 'none';
   });
   document.getElementById('btn-all').classList.toggle('active', topic === 'all');
   document.getElementById('btn-robotics').classList.toggle('active', topic === 'robotics');
